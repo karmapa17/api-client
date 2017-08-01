@@ -1,4 +1,4 @@
 {
   "presets": ["es2015", "babel-preset-stage-0"],
-  "plugins": ["add-module-exports"]
+  "plugins": ["transform-async-to-generator", "add-module-exports"]
 }
