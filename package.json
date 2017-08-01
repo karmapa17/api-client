@@ -3,6 +3,12 @@
   "version": "0.0.1",
   "description": "",
   "main": "dist/ApiClient.js",
+  "ava": {
+    "babel": "inherit",
+    "require": [
+      "./test/helpers/setupTestEnv.js"
+    ]
+  },
   "scripts": {
     "build": "babel src/ApiClient.js > dist/ApiClient.js",
     "test": "echo \"Error: no test specified\" && exit 1"
