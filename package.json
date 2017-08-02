@@ -10,7 +10,7 @@
     ]
   },
   "scripts": {
-    "build": "babel src/ApiClient.js > dist/ApiClient.js",
+    "build": "babel src -d dist",
     "test": "nyc ava",
     "coveralls": "nyc report --reporter=text-lcov | coveralls"
   },
