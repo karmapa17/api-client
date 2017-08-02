@@ -4,11 +4,7 @@ const methods = ['get', 'post', 'put', 'patch', 'del'];
 
 export default class ApiClient {
 
-  constructor(args) {
-
-    const options = Object.assign({
-      prefix: ''
-    }, args);
+  constructor({prefix} = {prefix: ''}) {
 
     this.csrfToken = null;
 
@@ -16,7 +12,7 @@ export default class ApiClient {
 
       this[method] = (path, {params, data} = {}) => new Promise((resolve, reject) => {
 
-        const request = superagent[method](`${options.prefix}${path}`);
+        const request = superagent[method](`${prefix}${path}`);
 
         if (params) {
           request.query(params);
