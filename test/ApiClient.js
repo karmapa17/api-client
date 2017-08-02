@@ -23,3 +23,11 @@ test('post function should work properly', async (t) => {
   const result = await apiClient.post('/posts', {data: {test: 1}});
   t.truthy(result);
 });
+
+test('post function should work properly with csrf token', async (t) => {
+
+  const apiClient = new ApiClient({prefix: API_URL});
+  apiClient.csrfToken = 'test';
+  const result = await apiClient.post('/posts', {data: {test: 1}});
+  t.is(result._csrf, apiClient.csrfToken);
+});
