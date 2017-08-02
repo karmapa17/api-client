@@ -17,3 +17,9 @@ test('get function should work properly with params', async (t) => {
   t.truthy(result);
 });
 
+test('post function should work properly', async (t) => {
+
+  const apiClient = new ApiClient({prefix: API_URL});
+  const result = await apiClient.post('/posts', {data: {test: 1}});
+  t.truthy(result);
+});
