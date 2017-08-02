@@ -9,3 +9,11 @@ test('get function should work properly', async (t) => {
   const result = await apiClient.get(`${API_URL}/posts`);
   t.truthy(result);
 });
+
+test('get function should work properly with params', async (t) => {
+
+  const apiClient = new ApiClient();
+  const result = await apiClient.get(`${API_URL}/posts`, {params: {test: 1}});
+  t.truthy(result);
+});
+
