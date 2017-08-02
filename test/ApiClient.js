@@ -34,7 +34,13 @@ test('post function should work properly with csrf token', async (t) => {
 
 test('post function should work properly without post body', async (t) => {
 
-  const apiClient = new ApiClient({prefix: API_URL});
-  const result = await apiClient.post('/blah');
-  t.truthy(result);
+  const apiClient = new ApiClient({prefix: 'http://localhost'});
+
+  try {
+    const result = await apiClient.post('/blah');
+  }
+  catch (err) {
+    t.truthy(err);
+  }
+
 });
